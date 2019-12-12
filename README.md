@@ -20,3 +20,5 @@ pip3 install opencv-python
 pip3 install tensorf;ow
 pip3 install tflearn
 # mltrainingtechcovery
+
+test push
