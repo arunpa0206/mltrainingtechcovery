@@ -21,6 +21,6 @@ print('Bagging score', model.score(x_test,y_test))
 
 #Random bags and average voring is done in Random forest
 from sklearn.ensemble import RandomForestClassifier
-model= RandomForestClassifier(random_state=1)
+model= RandomForestClassifier(random_state=1, n_estimators=100)
 model.fit(x_train, y_train)
 print('Random forest score:', model.score(x_test,y_test))

@@ -64,7 +64,7 @@ y = pd.factorize(train['species'])[0]
 #print(y)
 
 # Create a random forest Classifier. By convention, clf means 'Classifier'
-clf = RandomForestClassifier(n_jobs=2, random_state=0)
+clf = RandomForestClassifier(n_jobs=2, random_state=0,n_estimators=100)
 
 
 # Train the Classifier to take the training features and learn how they relate
@@ -74,7 +74,7 @@ RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
             max_depth=None, max_features='auto', max_leaf_nodes=None,
             min_impurity_split=1e-07, min_samples_leaf=1,
             min_samples_split=2, min_weight_fraction_leaf=0.0,
-            n_estimators=10, n_jobs=2, oob_score=False, random_state=0,
+            n_estimators=100, n_jobs=2, oob_score=False, random_state=0,
             verbose=0, warm_start=False)
 
 
