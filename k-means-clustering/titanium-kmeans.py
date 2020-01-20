@@ -26,7 +26,7 @@ home.dest Home/Destination
 df = pd.read_excel('titanic.xls')
 #print(df.head())
 df.drop(['body','name'], 1, inplace=True)
-df.convert_objects(convert_numeric=True)
+#df.to_numeric(convert_numeric=True)
 df.fillna(0, inplace=True)
 #print(df.head())
 
