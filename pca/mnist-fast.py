@@ -1,5 +1,5 @@
-from sklearn.datasets import fetch_mldata
-mnist = fetch_mldata('MNIST original')
+from sklearn.datasets import fetch_openml
+mnist = fetch_openml('mnist_784')
 
 from sklearn.model_selection import train_test_split
 # test_size: what proportion of original data is used for test set
@@ -24,7 +24,7 @@ test_img = pca.transform(test_img)
 from sklearn.linear_model import LogisticRegression
 # all parameters not specified are set to their defaults
 # default solver is incredibly slow which is why it was changed to 'lbfgs'
-logisticRegr = LogisticRegression(solver = 'lbfgs')
+logisticRegr = LogisticRegression(solver = 'lbfgs',max_iter=7600,multi_class='auto')
 logisticRegr.fit(train_img, train_lbl)
 
 # Predict for One Observation (image)
