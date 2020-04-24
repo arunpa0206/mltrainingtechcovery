@@ -1,4 +1,6 @@
 import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
 from nltk.tokenize import word_tokenize
 import numpy as np
 import random
