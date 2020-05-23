@@ -27,6 +27,8 @@ def baseline_model():
 	# create model
 	model = Sequential()
 	model.add(Dense(num_pixels, input_dim=num_pixels, kernel_initializer='normal', activation='relu'))
+	model.add(Dense(1000,activation='relu'))
+	model.add(Dense(2000,activation='relu'))
 	model.add(Dense(num_classes, kernel_initializer='normal', activation='relu'))
 	# Compile model
 	model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
