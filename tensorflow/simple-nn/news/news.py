@@ -4,7 +4,7 @@ from keras.datasets import reuters
 np_load_old = numpy.load
 
 # modify the default parameters of np.load
-numpy.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
+#numpy.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
 #Using TensorFlow backend.
 (x_train, y_train), (x_test, y_test) = reuters.load_data(num_words=None, test_split=0.2)
 word_index = reuters.get_word_index(path="reuters_word_index.json")

@@ -7,10 +7,6 @@ from keras.layers import Dense
 from keras.layers import Flatten
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
-np_load_old = numpy.load
-
-# modify the default parameters of np.load
-numpy.load = lambda *a,**k: np_load_old(*a, allow_pickle=True, **k)
 
 # call load_data with allow_pickle implicitly set to true
 #(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000

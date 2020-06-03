@@ -62,7 +62,7 @@ y_label = tf.placeholder(tf.float32, shape=(None, vocab_size))
 
 
 EMBEDDING_DIM = 5 # you can choose your own number
-W1 = tf.Variable(tf.random_normal([vocab_size, EMBEDDING_DIM]))
+W1 = tf.compat.v1.Variable(tf.random_normal([vocab_size, EMBEDDING_DIM]))
 b1 = tf.Variable(tf.random_normal([EMBEDDING_DIM])) #bias
 hidden_representation = tf.add(tf.matmul(x,W1), b1)
 

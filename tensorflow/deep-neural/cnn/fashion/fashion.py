@@ -2,20 +2,24 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import tensorflow as tf
-from tensorflow.examples.tutorials.mnist import input_data
+import tensorflow_datasets as tfds
+#from tensorflow.examples.tutorials.mnist import input_data
 import os
+#from dataset import fashion_MNIST
+data = tfds.load('fashion_mnist', split='train', shuffle_files=True)
 
-data = input_data.read_data_sets('fashion-mnist/data/fashion',one_hot=True)
+#data = input_data.read_data_sets('fashion-mnist/data/fashion',one_hot=True)
 
  #for training on gpu
 # Shapes of training set
+'''
 print("Training set (images) shape: {shape}".format(shape=data.train.images.shape))
 print("Training set (labels) shape: {shape}".format(shape=data.train.labels.shape))
 
 # Shapes of test set
 print("Test set (images) shape: {shape}".format(shape=data.test.images.shape))
 print("Test set (labels) shape: {shape}".format(shape=data.test.labels.shape))
-
+'''
 # Create dictionary of target classes
 label_dict = {
  0: 'T-shirt/top',
@@ -31,7 +35,7 @@ label_dict = {
 }
 
 plt.figure(figsize=[5,5])
-
+'''
 # Display the first image in training data
 plt.subplot(121)
 curr_img = np.reshape(data.train.images[0], (28,28))
@@ -45,6 +49,7 @@ curr_img = np.reshape(data.test.images[0], (28,28))
 curr_lbl = np.argmax(data.test.labels[0,:])
 plt.imshow(curr_img, cmap='gray')
 plt.title("(Label: " + str(label_dict[curr_lbl]) + ")")
+'''
 #plt.show()
 #print(data.train.images[0])
 # Reshape training and testing image
