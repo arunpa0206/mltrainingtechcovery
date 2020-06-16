@@ -7,11 +7,13 @@ from keras.layers import Dense
 from keras.layers import Flatten
 from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
+import warnings
+warnings.filterwarnings('ignore')
 
 # call load_data with allow_pickle implicitly set to true
 #(train_data, train_labels), (test_data, test_labels) = imdb.load_data(num_words=10000
 # load the dataset
-(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=10000)
+(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=5000)
 X = numpy.concatenate((X_train, X_test), axis=0)
 y = numpy.concatenate((y_train, y_test), axis=0)
 
@@ -31,23 +33,9 @@ print("length:",len(numpy.unique(numpy.hstack(X))))
 # Summarize review length
 print("Review length: ")
 result = [len(x) for x in X]
-print("Mean %.2f words (%f)" % (numpy.mean(result), numpy.std(result)))
-# plot review lengt
-
-imdb.load_data(num_words=5000)
-X_train = sequence.pad_sequences(X_train, maxlen=500)
-X_test = sequence.pad_sequences(X_test, maxlen=500)
-
-Embedding(5000, 32, input_length=500)
-
-
-# fix random seed for reproducibility
-seed = 7
-numpy.random.seed(seed)
+print("Mean %.2f review length (%f)" % (numpy.mean(result), numpy.std(result)))
 
 top_words = 5000
-(X_train, y_train), (X_test, y_test) = imdb.load_data(num_words=top_words)
-
 max_words = 500
 X_train = sequence.pad_sequences(X_train, maxlen=max_words)
 X_test = sequence.pad_sequences(X_test, maxlen=max_words)

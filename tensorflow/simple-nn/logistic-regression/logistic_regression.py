@@ -1,5 +1,3 @@
-
-
 # Build the model of a logistic classifier
 import os
 import gzip
@@ -28,6 +26,7 @@ X_train = X_train.reshape(60000, input_dim)
 X_test = X_test.reshape(10000, input_dim)
 X_train = X_train.astype('float32')
 X_test = X_test.astype('float32')
+#scaling - represent each pixel between 0 and 1
 X_train /= 255
 X_test /= 255
 print(X_train.shape[0], 'train samples')

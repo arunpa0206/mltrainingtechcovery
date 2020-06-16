@@ -8,7 +8,7 @@ from keras.datasets import imdb
 import os
 
 os.environ['KMP_DUPLICATE_LIB_OK']='True'
-np_load_old = np.load
+#np_load_old = np.load
 
 # modify the default parameters of np.load
 #np.load = lambda *a: np_load_old(*a, allow_pickle=True)

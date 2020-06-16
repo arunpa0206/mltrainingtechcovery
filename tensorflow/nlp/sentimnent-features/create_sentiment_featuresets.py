@@ -36,11 +36,8 @@ def create_lexicon(pos,neg):
 		#print(w_counts[w])
 		if 1000 > w_counts[w] > 50:
 			l2.append(w)
-	print(len(l2))
+	print("legnth of lexicon:", len(l2))
 	return l2
-
-
-
 
 
 def sample_handling(sample,lexicon,classification):
@@ -85,9 +82,9 @@ def create_feature_sets_and_labels(pos,neg,test_size = 0.1):
 
 if __name__ == '__main__':
 	train_x,train_y,test_x,test_y = create_feature_sets_and_labels('pos.txt','neg.txt')
-	print(len(train_x))
-	print(train_x[0])
-	print(train_x[1])
+	print("length of train_x:",len(train_x))
+	print("x_train[0]:",train_x[0])
+	print("x_train[1]:",train_x[1])
 
 
 	# if you want to pickle this data:
