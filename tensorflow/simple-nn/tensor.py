@@ -36,16 +36,14 @@ class NeuralNet(Model):
     # Set layers.
     def __init__(self):
         super(NeuralNet, self).__init__()
-        # First fully-connected hidden layer.
 
-        # Second fully-connecter hidden layer.
+        # output layer
         self.out = layers.Dense(num_classes)
 
     # Set forward pass.
     def call(self, x, is_training=False):
 
 
-        x = self.out(x)
         if not is_training:
             # tf cross entropy expect logits without softmax, so only
             # apply softmax when not training.
