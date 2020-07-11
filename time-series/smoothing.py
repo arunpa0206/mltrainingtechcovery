@@ -42,7 +42,10 @@ plt.show()
 
 #############################################
 #Identify if data is stationary
-#Stationarity is defined using very strict criterion. However, for practical purposes we can assume the series to be stationary if it has constant statistical properties over time, ie. the following:
+#Stationarity is defined using very strict criterion.
+#However, for practical purposes we can assume the series to be
+#stationary if it has constant statistical properties over time,
+#ie. the following:
 
 #constant mean
 #constant variance
@@ -61,7 +64,11 @@ std = plt.plot(rolstd, color='black', label = 'Rolling Std')
 plt.legend(loc='best')
 plt.title('Rolling Mean & Standard Deviation')
 plt.show()
-#One of the first tricks to reduce trend can be transformation. For example, in this case we can clearly see that the there is a significant positive trend. So we can apply transformation which penalize higher values more than smaller values. These can be taking a log, square root, cube root, etc. Lets take a log transform here for simplicity:
+#One of the first tricks to reduce trend can be transformation.
+#For example, in this case we can clearly see that the there is a
+#significant positive trend. So we can apply transformation which
+#penalize higher values more than smaller values.
+#These can be taking a log, square root, cube root, etc. Lets take a log transform here for simplicity:
 ts_log = np.log(ts)
 plt.plot(ts_log)
 plt.show()

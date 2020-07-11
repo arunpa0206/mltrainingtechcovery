@@ -16,7 +16,7 @@ from hyperas.distributions import choice, uniform
 #Pre process Data
 def data():
     (X_train, y_train), (X_test, y_test) = tf.keras.datasets.fashion_mnist.load_data()
-    X_train, X_val, y_train, y_val = train_test_split(X_train,    y_train, test_size=0.2, random_state=12345)
+    X_train, X_val, y_train, y_val = train_test_split(X_train,   y_train, test_size=0.2, random_state=12345)
     X_train = X_train.reshape(48000, 784)
     X_val = X_val.reshape(12000, 784)
     X_train = X_train.astype('float32')
@@ -58,7 +58,7 @@ def model(X_train, Y_train, X_val, Y_val):
     model.compile(loss='categorical_crossentropy', metrics=['accuracy'],optimizer=optim)
     model.fit(X_train, Y_train,
               batch_size={{choice([128,256,512])}},
-              nb_epoch=20,
+              epochs=20,
               verbose=2,
               validation_data=(X_val, Y_val))
     score, acc = model.evaluate(X_val, Y_val, verbose=0)
