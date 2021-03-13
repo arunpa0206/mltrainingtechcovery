@@ -1,4 +1,4 @@
-# Build the model of a logistic classifier
+z# Build the model of a logistic classifier
 import os
 import gzip
 import six.moves.cPickle as pickle
@@ -47,7 +47,7 @@ history = model.fit(X_train, Y_train,
                     verbose=1, validation_data=(X_test, Y_test))
 score = model.evaluate(X_test, Y_test, verbose=0)
 
-print('Test score:', score[0])
+print('Test loss:', score[0])
 print('Test accuracy:', score[1])
 
 # save model as json and yaml

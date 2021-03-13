@@ -78,7 +78,8 @@ moving_avg = ts_log.rolling(window=12).mean()
 plt.plot(ts_log)
 plt.plot(moving_avg, color='red')
 plt.show()
-#Since we use moving avg for 12 monthsm it is not applicable for first 11 minths
+#Since we use moving avg for 12 monthsm it is not applicable for
+#first 11 minths
 ts_log_moving_avg_diff = ts_log - moving_avg
 print(ts_log_moving_avg_diff.head(12))
 #Dropping NAN predicted_values

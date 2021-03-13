@@ -5,8 +5,8 @@ weight=[  42 ,  44 , 49, 55  , 53  , 58   , 60  , 64  ,  66 ,  69]
 print("height -> weight")
 for row in zip(height, weight):
     print(row[0][0],"->",row[1])
-
-#Plot the input data
+#http://github.com/arunpa0206/mltrainingtechcovery
+#Plot the in put data
 import matplotlib.pyplot as plt
 plt.scatter(height,weight,color='black')
 plt.xlabel("height")
